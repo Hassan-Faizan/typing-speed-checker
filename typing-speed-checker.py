@@ -1,7 +1,7 @@
 from tkinter import *
 from tkinter import ttk
 
-DURATION = 60
+DURATION = 30
 text1 = "If you don't like a test prompt, you can get a different (random) prompt with the 'change test' button - or select a specific paragraph to type from the list below. To find out how fast you type, just start typing in the blank textbox on the right of the test prompt. You will see your progress, including errors on the left side as you type. In order to complete the test and save your score, you need to get 100% accuracy. You can fix errors as you go, or correct them at the end with the help of the spell checker. Stimulate your mind as you test your typing speed with this standard English paragraph typing test. Watch your typing speed and accuracy increase as you learn about a variety of new topics! Over 40 typing test selections are available. To find out how fast you type, just start typing in the blank textbox on the right of the test prompt. You will see your progress, including errors on the left side as you type. In order to complete the test and share your results, you need to get 100% accuracy. You can review your progress for this session with the feedback chart below. Just hover over a dot to see what your average speed and accuracy are for that key. Because of the laboriousness of the translation process, since the 1940s efforts have been made, with varying degrees of success, to automate translation or to mechanically aid the human translator. More recently, the rise of the Internet has fostered a worldwide market for translation services and has facilitated 'language localization'. Ideally, the translator must know both languages, as well as the subject that is to be translated."
 text2 = 'A quick brown fox jumps over the lazy dog'
 text3 = 'Type to search about something you want to search  about'
@@ -18,7 +18,8 @@ def check():
     for n in range(len(user_words)):
         if user_words[n] == test_words[n]:
             correct_words += 1
-    Label(window, text=f'Your typing speed is {correct_words} WPM', font=("Arial", 25)).pack(pady=20)
+    speed = correct_words * 60/DURATION
+    Label(window, text=f'Your typing speed is {speed} WPM', font=("Arial", 25)).pack(pady=20)
 
 
 def start_typing(event):
